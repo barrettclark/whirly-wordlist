@@ -1,0 +1,9 @@
+<p>Here are some possibilities.  YMMV.</p>
+
+<ul>
+  <% @words.each do |word| %>
+  <li><%= word %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Solve another', root_path %>

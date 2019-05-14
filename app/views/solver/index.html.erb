@@ -1,0 +1,29 @@
+<h1>Whirly Word Solver</h1>
+
+<%= form_tag(solver_letters_path, method: 'post') do %>
+  <%= label_tag(:letter1, "Letter 1:") %>
+  <%= text_field_tag(:letter1, nil, :maxlength => 1, :size => 2) %>
+  <br />
+
+  <%= label_tag(:letter1, "Letter 2:") %>
+  <%= text_field_tag(:letter2, nil, :maxlength => 1, :size => 2) %>
+  <br />
+
+  <%= label_tag(:letter1, "Letter 3:") %>
+  <%= text_field_tag(:letter3, nil, :maxlength => 1, :size => 2) %>
+  <br />
+
+  <%= label_tag(:letter1, "Letter 4:") %>
+  <%= text_field_tag(:letter4, nil, :maxlength => 1, :size => 2) %>
+  <br />
+
+  <%= label_tag(:letter1, "Letter 5:") %>
+  <%= text_field_tag(:letter5, nil, :maxlength => 1, :size => 2) %>
+  <br />
+
+  <%= label_tag(:letter1, "Letter 6:") %>
+  <%= text_field_tag(:letter6, nil, :maxlength => 1, :size => 2) %>
+  <br />
+
+  <%= submit_tag("See Some Words") %>
+<% end %>
