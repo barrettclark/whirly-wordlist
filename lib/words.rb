@@ -2,7 +2,7 @@ class WordList
   attr_reader :words
 
   def initialize
-    @words = []
+    @words = Array.new
     read_list
   end
 
@@ -17,9 +17,8 @@ class WordList
   end
 
   private
-
   def read_list
-    IO.foreach(File.join(Rails.root, 'lib', 'words_alpha.txt')) { |line| @words << line.chomp }
+    IO.foreach(File.join(Rails.root, 'lib', 'wordsEn.txt')) { |line| @words << line.chomp }
     puts "#{@words.count} words read into memory"
   end
 end
@@ -40,7 +39,6 @@ http://www.ruby-doc.org/stdlib-2.1.4/libdoc/set/rdoc/Set.html#method-i-3E
 Usage:
 
     $ wget http://www-01.sil.org/linguistics/wordlists/english/wordlist/wordsEn.txt
-    $ wget https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt
     $ irb -r ./words
     >> wl = WordList.new; nil
     109582 words read into memory
