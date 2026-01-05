@@ -1,5 +1,4 @@
 class SolverController < ApplicationController
-  require 'words'
 
   # GET /
   # GET /solver/index
