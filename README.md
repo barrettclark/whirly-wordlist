@@ -22,3 +22,11 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Heroku deployment
+
+The credentials file was regenerated locally. Update the Heroku config var before deploying:
+
+```bash
+heroku config:set RAILS_MASTER_KEY=$(cat config/master.key)
+```
