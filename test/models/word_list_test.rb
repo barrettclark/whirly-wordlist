@@ -2,7 +2,7 @@ require "test_helper"
 
 # Avoids loading the 109k-word production file during tests
 class TestWordList < WordList
-  TEST_WORDS = %w[a ab act acts arc arcs car care card cat cats scat catch].freeze
+  TEST_WORDS = %w[a ab act acts arc arcs car care card cat cats scat catch tat].freeze
 
   private
 
@@ -63,5 +63,14 @@ class WordListTest < ActiveSupport::TestCase
   test "returns empty array when no words match" do
     results = @wl.check_letters("q", "q", "q", "q", "q", "q")
     assert_equal [], results
+  end
+
+  test "requires sufficient letter count - excludes words needing a letter more times than supplied" do
+    # "tat" needs two 't's
+    with_two_ts = @wl.check_letters("t", "a", "t", "x", "y", "z")
+    assert_includes with_two_ts, "tat"
+
+    with_one_t = @wl.check_letters("t", "a", "x", "y", "z", "w")
+    refute_includes with_one_t, "tat"
   end
 end

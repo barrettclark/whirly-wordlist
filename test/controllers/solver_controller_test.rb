@@ -1,9 +1,11 @@
 require "test_helper"
 
 class SolverControllerTest < ActionDispatch::IntegrationTest
-  test "GET / returns 200" do
+  test "GET / returns 200 and renders the letter entry form" do
     get root_url
     assert_response :success
+    assert_select "form"
+    assert_select "input[name=letter1]"
   end
 
   test "POST /solver/letters with all 6 letters returns 200 and renders words" do
