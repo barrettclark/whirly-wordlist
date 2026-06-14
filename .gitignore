@@ -29,3 +29,6 @@
 *.db
 .beads-credential-key
 .beads/proxieddb/
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
