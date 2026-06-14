@@ -30,6 +30,8 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+gem "tailwindcss-rails"
+
 # CSS processing - using plain CSS with Sprockets
 # If you need SCSS in the future, consider cssbundling-rails or dartsass-rails with a build process
 
@@ -53,5 +55,4 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-  gem "webdrivers"
 end
