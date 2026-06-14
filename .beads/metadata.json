@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "embedded",
+  "dolt_database": "whirly_wordlist",
+  "project_id": "c8a09100-3c9b-4cf9-a50e-e2230be1e0fb"
+}

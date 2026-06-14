@@ -23,3 +23,9 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Beads / Dolt files (added by bd init)
+.dolt/
+*.db
+.beads-credential-key
+.beads/proxieddb/
