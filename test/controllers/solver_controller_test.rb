@@ -14,7 +14,7 @@ class SolverControllerTest < ActionDispatch::IntegrationTest
       letter4: "s", letter5: "e", letter6: "r"
     }
     assert_response :success
-    assert_select "li", minimum: 1
+    assert_select "span.rounded-full", minimum: 1
   end
 
   test "POST /solver/letters with a blank letter redirects to root" do
