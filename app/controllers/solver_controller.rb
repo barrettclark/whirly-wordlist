@@ -13,11 +13,9 @@ class SolverController < ApplicationController
     letter5 = params[:letter5].to_s.strip.downcase
     letter6 = params[:letter6].to_s.strip.downcase
     unless letter1.empty? || letter2.empty? || letter3.empty? || letter4.empty? || letter5.empty? || letter6.empty?
-      wl = WordList.new
-      words = wl.check_letters(letter1, letter2, letter3, letter4, letter5, letter6)
-      @words = words
-      @words_by_length = words.group_by(&:length)
-      @total_count = words.length
+      @words = WordList.new.check_letters(letter1, letter2, letter3, letter4, letter5, letter6)
+      @words_by_length = @words.group_by(&:length)
+      @total_count = @words.length
     else
       redirect_to root_path
       return
