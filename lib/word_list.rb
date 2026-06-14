@@ -19,7 +19,6 @@ class WordList
   private
   def read_list
     IO.foreach(File.join(Rails.root, 'lib', 'wordsEn.txt')) { |line| @words << line.chomp }
-    puts "#{@words.count} words read into memory"
   end
 end
 
